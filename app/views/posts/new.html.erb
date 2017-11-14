@@ -1,4 +1,13 @@
-<h1>New post</h1>
+<h1>New post</h1><br>
+<h2><%= @post.name %></h2><br>
+<p><%= @post.content %></p><br>
+<ul> <% Tag.all.each do |t| %>
+  <% if t.post_id == @post.id %>
+  <li> <%= t.name %></li><br>
+  <% end %>
+</ul>
+<% end %>
+  
 
 <%= render 'form' %>
 
